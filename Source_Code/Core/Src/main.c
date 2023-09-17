@@ -71,7 +71,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 1:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
 		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
 		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, SET);
 		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, SET);
@@ -85,8 +84,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 2:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
 		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
 		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, SET);
 		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, SET);
@@ -99,9 +96,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 3:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
 		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
 		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, SET);
 		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, SET);
@@ -113,10 +107,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 4:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
 		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
 		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, SET);
 		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, SET);
@@ -127,11 +117,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 5:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
 		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
 		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, SET);
 		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, SET);
@@ -141,12 +126,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 6:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
-		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
 		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, RESET);
 		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, SET);
 		HAL_GPIO_WritePin(_8_GPIO_Port, _8_Pin, SET);
@@ -155,13 +134,6 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 7:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
-		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
-		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, RESET);
 		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, RESET);
 		HAL_GPIO_WritePin(_8_GPIO_Port, _8_Pin, SET);
 		HAL_GPIO_WritePin(_9_GPIO_Port, _9_Pin, SET);
@@ -169,59 +141,21 @@ void setclock(int num){
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
-		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
-		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, RESET);
-		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, RESET);
 		HAL_GPIO_WritePin(_8_GPIO_Port, _8_Pin, RESET);
 		HAL_GPIO_WritePin(_9_GPIO_Port, _9_Pin, SET);
 		HAL_GPIO_WritePin(_10_GPIO_Port, _10_Pin, SET);
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 9:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
-		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
-		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, RESET);
-		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, RESET);
-		HAL_GPIO_WritePin(_8_GPIO_Port, _8_Pin, RESET);
 		HAL_GPIO_WritePin(_9_GPIO_Port, _9_Pin, RESET);
 		HAL_GPIO_WritePin(_10_GPIO_Port, _10_Pin, SET);
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 10:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
-		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
-		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, RESET);
-		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, RESET);
-		HAL_GPIO_WritePin(_8_GPIO_Port, _8_Pin, RESET);
-		HAL_GPIO_WritePin(_9_GPIO_Port, _9_Pin, RESET);
 		HAL_GPIO_WritePin(_10_GPIO_Port, _10_Pin, RESET);
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, SET);
 		break;
 	case 11:
-		HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, RESET);
-		HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, RESET);
-		HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, RESET);
-		HAL_GPIO_WritePin(_3_GPIO_Port, _3_Pin, RESET);
-		HAL_GPIO_WritePin(_4_GPIO_Port, _4_Pin, RESET);
-		HAL_GPIO_WritePin(_5_GPIO_Port, _5_Pin, RESET);
-		HAL_GPIO_WritePin(_6_GPIO_Port, _6_Pin, RESET);
-		HAL_GPIO_WritePin(_7_GPIO_Port, _7_Pin, RESET);
-		HAL_GPIO_WritePin(_8_GPIO_Port, _8_Pin, RESET);
-		HAL_GPIO_WritePin(_9_GPIO_Port, _9_Pin, RESET);
-		HAL_GPIO_WritePin(_10_GPIO_Port, _10_Pin, RESET);
 		HAL_GPIO_WritePin(_11_GPIO_Port, _11_Pin, RESET);
 		break;
 	default:
@@ -264,14 +198,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
+  int cnt=0;	//counter
     while (1)
     {
       /* USER CODE END WHILE */
-  	  if(cnt>=12) cnt=0;
-  	  setclock(cnt);
-  	  cnt+=1;
-  	  HAL_Delay(1000);
+  	  if(cnt>=12) cnt=0;	//reset cnt
+  	  setclock(cnt);	//use function to display
+  	  cnt+=1;	//increase cnt
+  	  HAL_Delay(1000);	//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */
