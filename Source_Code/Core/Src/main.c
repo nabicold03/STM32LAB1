@@ -91,29 +91,31 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
-    int red=0;
+  int cnt=0; //counter for timing
+    int red=0;	//red=0 => vertical lane is red
     while (1)
     {
       /* USER CODE END WHILE */
   	  if(red==0){
+  		  //turn on red vertical lane
   		  HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, RESET);
+  		  //turn off red horizontal lane, yellow and green vertical lane
   		  HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, SET);
   		  HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, SET);
   		  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
-  		  if(cnt<3){
+  		  if(cnt<3){	//turn on green horizontal lane
   			  HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);
   			  HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
-  		  } else {
+  		  } else {		//turn on yellow horizontal lane
   			  HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
   			  HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, RESET);
   		  }
-  		  cnt+=1;
-  		  if(cnt==5){
+  		  cnt+=1;	//increase counter
+  		  if(cnt==5){	//if counter reaches 5 => change lane
   			  cnt=0;
   			  red=1;
   		  }
-  	  } else {
+  	  } else {	//similar to above but reversely
   		  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
   		  HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
   		  HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
@@ -131,7 +133,7 @@ int main(void)
   			  red=0;
   		  }
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */

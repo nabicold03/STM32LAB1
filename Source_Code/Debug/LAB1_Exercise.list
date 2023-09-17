@@ -112,10 +112,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
+  int cnt=0; //counter for timing
  800015e:	2300      	movs	r3, #0
  8000160:	607b      	str	r3, [r7, #4]
-    int red=0;
+    int red=0;	//red=0 => vertical lane is red
  8000162:	2300      	movs	r3, #0
  8000164:	603b      	str	r3, [r7, #0]
     while (1)
@@ -125,11 +125,13 @@ int main(void)
  8000166:	683b      	ldr	r3, [r7, #0]
  8000168:	2b00      	cmp	r3, #0
  800016a:	d136      	bne.n	80001da <main+0x8e>
+  		  //turn on red vertical lane
   		  HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, RESET);
  800016c:	2200      	movs	r2, #0
  800016e:	2110      	movs	r1, #16
  8000170:	4837      	ldr	r0, [pc, #220]	; (8000250 <main+0x104>)
  8000172:	f000 fc4d 	bl	8000a10 <HAL_GPIO_WritePin>
+  		  //turn off red horizontal lane, yellow and green vertical lane
   		  HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, SET);
  8000176:	2201      	movs	r2, #1
  8000178:	2120      	movs	r1, #32
@@ -145,7 +147,7 @@ int main(void)
  800018c:	2102      	movs	r1, #2
  800018e:	4830      	ldr	r0, [pc, #192]	; (8000250 <main+0x104>)
  8000190:	f000 fc3e 	bl	8000a10 <HAL_GPIO_WritePin>
-  		  if(cnt<3){
+  		  if(cnt<3){	//turn on green horizontal lane
  8000194:	687b      	ldr	r3, [r7, #4]
  8000196:	2b02      	cmp	r3, #2
  8000198:	dc0a      	bgt.n	80001b0 <main+0x64>
@@ -160,7 +162,7 @@ int main(void)
  80001a8:	4829      	ldr	r0, [pc, #164]	; (8000250 <main+0x104>)
  80001aa:	f000 fc31 	bl	8000a10 <HAL_GPIO_WritePin>
  80001ae:	e009      	b.n	80001c4 <main+0x78>
-  		  } else {
+  		  } else {		//turn on yellow horizontal lane
   			  HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
  80001b0:	2201      	movs	r2, #1
  80001b2:	2108      	movs	r1, #8
@@ -172,11 +174,11 @@ int main(void)
  80001be:	4824      	ldr	r0, [pc, #144]	; (8000250 <main+0x104>)
  80001c0:	f000 fc26 	bl	8000a10 <HAL_GPIO_WritePin>
   		  }
-  		  cnt+=1;
+  		  cnt+=1;	//increase counter
  80001c4:	687b      	ldr	r3, [r7, #4]
  80001c6:	3301      	adds	r3, #1
  80001c8:	607b      	str	r3, [r7, #4]
-  		  if(cnt==5){
+  		  if(cnt==5){	//if counter reaches 5 => change lane
  80001ca:	687b      	ldr	r3, [r7, #4]
  80001cc:	2b05      	cmp	r3, #5
  80001ce:	d13a      	bne.n	8000246 <main+0xfa>
@@ -188,7 +190,7 @@ int main(void)
  80001d6:	603b      	str	r3, [r7, #0]
  80001d8:	e035      	b.n	8000246 <main+0xfa>
   		  }
-  	  } else {
+  	  } else {	//similar to above but reversely
   		  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
  80001da:	2200      	movs	r2, #0
  80001dc:	2102      	movs	r1, #2
@@ -252,7 +254,7 @@ int main(void)
  8000244:	603b      	str	r3, [r7, #0]
   		  }
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//delay 1 sec
  8000246:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800024a:	f000 f95f 	bl	800050c <HAL_Delay>
   	  if(red==0){
