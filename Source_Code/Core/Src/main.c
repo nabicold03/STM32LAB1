@@ -186,13 +186,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
+  int cnt=0;	//counter used for timing
     while (1)
     {
       /* USER CODE END WHILE */
-  	  if(cnt>=10) cnt=0;
-  	  display7SEG(cnt++);
-  	  HAL_Delay(1000);
+  	  if(cnt>=10) cnt=0;	//reset counter when it reaches 10
+  	  display7SEG(cnt++);	//use function to display 7seg LED, then increase cnt
+  	  HAL_Delay(1000);		//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */
