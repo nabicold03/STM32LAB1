@@ -91,28 +91,28 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
+  int cnt=0;	//initialize counter variable for timing
     while (1)
     {
       /* USER CODE END WHILE */
-  	  if(cnt<3){
+  	  if(cnt<3){	//if cnt still does not reach value 3 => Green on, 2 others off
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-  	  } else if(cnt<5){
+  	  } else if(cnt<5){		//if cnt>=3 but still <5 => Yellow on, 2 others off
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-  	  } else {
+  	  } else {		//if cnt>=5 Red on, 2 others off
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
   	  }
-  	  cnt+=1;
-  	  if(cnt>=10){
+  	  cnt+=1;	//increase counter
+  	  if(cnt>=10){	//if cnt reaches 10 => reset cnt to 0
   		  cnt=0;
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */

@@ -112,13 +112,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
+  int cnt=0;	//initialize counter variable for timing
  800015e:	2300      	movs	r3, #0
  8000160:	607b      	str	r3, [r7, #4]
     while (1)
     {
       /* USER CODE END WHILE */
-  	  if(cnt<3){
+  	  if(cnt<3){	//if cnt still does not reach value 3 => Green on, 2 others off
  8000162:	687b      	ldr	r3, [r7, #4]
  8000164:	2b02      	cmp	r3, #2
  8000166:	dc0f      	bgt.n	8000188 <main+0x3c>
@@ -138,7 +138,7 @@ int main(void)
  8000180:	4819      	ldr	r0, [pc, #100]	; (80001e8 <main+0x9c>)
  8000182:	f000 fc11 	bl	80009a8 <HAL_GPIO_WritePin>
  8000186:	e021      	b.n	80001cc <main+0x80>
-  	  } else if(cnt<5){
+  	  } else if(cnt<5){		//if cnt>=3 but still <5 => Yellow on, 2 others off
  8000188:	687b      	ldr	r3, [r7, #4]
  800018a:	2b04      	cmp	r3, #4
  800018c:	dc0f      	bgt.n	80001ae <main+0x62>
@@ -158,7 +158,7 @@ int main(void)
  80001a6:	4810      	ldr	r0, [pc, #64]	; (80001e8 <main+0x9c>)
  80001a8:	f000 fbfe 	bl	80009a8 <HAL_GPIO_WritePin>
  80001ac:	e00e      	b.n	80001cc <main+0x80>
-  	  } else {
+  	  } else {		//if cnt>=5 Red on, 2 others off
   		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
  80001ae:	2201      	movs	r2, #1
  80001b0:	2180      	movs	r1, #128	; 0x80
@@ -175,11 +175,11 @@ int main(void)
  80001c6:	4808      	ldr	r0, [pc, #32]	; (80001e8 <main+0x9c>)
  80001c8:	f000 fbee 	bl	80009a8 <HAL_GPIO_WritePin>
   	  }
-  	  cnt+=1;
+  	  cnt+=1;	//increase counter
  80001cc:	687b      	ldr	r3, [r7, #4]
  80001ce:	3301      	adds	r3, #1
  80001d0:	607b      	str	r3, [r7, #4]
-  	  if(cnt>=10){
+  	  if(cnt>=10){	//if cnt reaches 10 => reset cnt to 0
  80001d2:	687b      	ldr	r3, [r7, #4]
  80001d4:	2b09      	cmp	r3, #9
  80001d6:	dd01      	ble.n	80001dc <main+0x90>
@@ -187,10 +187,10 @@ int main(void)
  80001d8:	2300      	movs	r3, #0
  80001da:	607b      	str	r3, [r7, #4]
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//delay 1 sec
  80001dc:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80001e0:	f000 f960 	bl	80004a4 <HAL_Delay>
-  	  if(cnt<3){
+  	  if(cnt<3){	//if cnt still does not reach value 3 => Green on, 2 others off
  80001e4:	e7bd      	b.n	8000162 <main+0x16>
  80001e6:	bf00      	nop
  80001e8:	40010800 	.word	0x40010800
