@@ -146,17 +146,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  	int cnt=0;
-    clearAllclock();
+  	int cnt=0;	//counter
+    clearAllclock();	//clear all clock before
     while (1)
     {
       /* USER CODE END WHILE */
-  	  if(cnt>=12){
+  	  if(cnt>=12){	//reset counter
   		  cnt=0;
-  		  clearAllclock();
+  		  clearAllclock();	//clear all clock
   	  }
-  	  setNumberOnClock(cnt++);
-  	  HAL_Delay(1000);
+  	  setNumberOnClock(cnt++);	//set clock based on cnt and increase cnt then
+  	  HAL_Delay(1000);	//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */
