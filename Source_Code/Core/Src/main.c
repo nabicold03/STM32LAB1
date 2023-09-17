@@ -54,7 +54,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void display7seg_1(int num){
+void display7seg_1(int num){	//function to display the first LED
 	switch(num){
 	case 0:
 		HAL_GPIO_WritePin(Cl1_0_GPIO_Port, Cl1_0_Pin, RESET);
@@ -150,7 +150,7 @@ void display7seg_1(int num){
 		break;
 	}
 }
-void display7seg_2(int num){
+void display7seg_2(int num){	//function to display the 2nd led
 	switch(num){
 	case 0:
 		HAL_GPIO_WritePin(Cl2_0_GPIO_Port, Cl2_0_Pin, RESET);
@@ -280,7 +280,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int red=0;
-    int cnt=0;
+    int cnt=0;	//counter for timing
     while (1)
     {
       /* USER CODE END WHILE */
@@ -289,22 +289,22 @@ int main(void)
   		  HAL_GPIO_WritePin(YELLOW_2_GPIO_Port, YELLOW_2_Pin, SET);
   		  HAL_GPIO_WritePin(GREEN_2_GPIO_Port, GREEN_2_Pin, SET);
   		  HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, SET);
-  		  display7seg_2(5-cnt);
+  		  display7seg_2(5-cnt);	//display time RED for 7segLEDs
   		  if(cnt<3){
   			  HAL_GPIO_WritePin(GREEN_1_GPIO_Port, GREEN_1_Pin, RESET);
   			  HAL_GPIO_WritePin(YELLOW_1_GPIO_Port, YELLOW_1_Pin, SET);
-  			  display7seg_1(3-cnt);
+  			  display7seg_1(3-cnt);	//display time GREEN for 7segLEDs
   		  } else {
   			  HAL_GPIO_WritePin(GREEN_1_GPIO_Port, GREEN_1_Pin, SET);
   			  HAL_GPIO_WritePin(YELLOW_1_GPIO_Port, YELLOW_1_Pin, RESET);
-  			  display7seg_1(5-cnt);
+  			  display7seg_1(5-cnt);	//display time YELLOW for 7segLEDs
   		  }
   		  cnt+=1;
   		  if(cnt>=5){
   			  cnt=0;
   			  red=1;
   		  }
-  	  } else {
+  	  } else {	//similar to above but reversely
   		  HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, RESET);
   		  HAL_GPIO_WritePin(YELLOW_1_GPIO_Port, YELLOW_1_Pin, SET);
   		  HAL_GPIO_WritePin(GREEN_1_GPIO_Port, GREEN_1_Pin, SET);
@@ -325,7 +325,7 @@ int main(void)
   			  red=0;
   		  }
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */
