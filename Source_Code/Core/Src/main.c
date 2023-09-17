@@ -188,32 +188,32 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int sec=0;
-    int min=4;
-    int hour=7;
+  int sec=0;	//initialize a value for sec
+    int min=59;	//initialize a value for min
+    int hour=23;	//initialize a value for hour
     while (1)
     {
       /* USER CODE END WHILE */
-  	  clearAllclock();
-  	  setNumberOnClock(sec/5);
-  	  setNumberOnClock(min/5);
-  	  setNumberOnClock(hour%12);
+  	  clearAllclock();	//clear all clock
+  	  setNumberOnClock(sec/5);	//set time for sec
+  	  setNumberOnClock(min/5);	//set time for min
+  	  setNumberOnClock(hour%12);	//set time for hour
   	  if(sec==59){
-  		  sec=0;
+  		  sec=0;	//reset sec if it reaches 59
   		  if(min==59){
-  			  min=0;
+  			  min=0;	//reset min if it reaches 60
   			  if(hour==23){
-  				  hour=0;
+  				  hour=0;	//reset hour if it reaches 24
   			  } else {
-  				  hour++;
+  				  hour++;	//increase hour
   			  }
   		  } else {
-  			  min++;
+  			  min++;	//increase min
   		  }
   	  } else {
-  		  sec++;
+  		  sec++;	//increase sec
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */
