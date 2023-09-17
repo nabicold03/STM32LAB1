@@ -54,7 +54,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void clearAllclock(){
+void clearAllclock(){	//set all clock to SET state (off state)
 	HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, SET);
 	HAL_GPIO_WritePin(_1_GPIO_Port, _1_Pin, SET);
 	HAL_GPIO_WritePin(_2_GPIO_Port, _2_Pin, SET);
@@ -107,7 +107,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  clearAllclock();
+	  clearAllclock(); //call function to clear all clock
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

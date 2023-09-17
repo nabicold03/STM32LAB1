@@ -82,7 +82,7 @@ Disassembly of section .text:
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void clearAllclock(){
+void clearAllclock(){	//set all clock to SET state (off state)
  800014c:	b580      	push	{r7, lr}
  800014e:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(_12_GPIO_Port, _12_Pin, SET);
@@ -185,7 +185,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  clearAllclock();
+	  clearAllclock(); //call function to clear all clock
  80001f0:	f7ff ffac 	bl	800014c <clearAllclock>
  80001f4:	e7fc      	b.n	80001f0 <main+0x10>
 
