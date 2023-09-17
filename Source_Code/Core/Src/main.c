@@ -91,29 +91,29 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
-    int led1=1;
+  int cnt=0; //counter variable to count the time
+    int led1=1; //led1=1 => RED on YELLOW off    ;    led1=0 => YELLOW on RED off
     while (1)
     {
       /* USER CODE END WHILE */
   	  if(led1==1){
-  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
-  		  cnt+=1;
-  		  if(cnt==2){
-  			  cnt=0;
-  			  led1=0;
+  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET); //Turn on RED LED
+  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET); //Turn off YELLOW RED
+  		  cnt+=1;	//increase counter
+  		  if(cnt==2){	//if counter reaches 2 sec => change led1 to 0 to change the LED
+  			  cnt=0;	//reassign value for counter
+  			  led1=0;	//change led1 to 0
   		  }
   	  } else {
-  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
-  		  cnt+=1;
-  		  if(cnt==2){
-  			  cnt=0;
-  			  led1=1;
+  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET); //Turn off RED LED
+  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET); //Turn on YELLOW RED
+  		  cnt+=1; //increase counter
+  		  if(cnt==2){	//if counter reaches 2 sec => change led1 to 1 to change the LED
+  			  cnt=0;	//reassign value for counter
+  			  led1=1;	//change led1 to 1
   		  }
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//Delay 1 sec
       /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */

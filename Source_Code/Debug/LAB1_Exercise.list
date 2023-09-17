@@ -112,10 +112,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int cnt=0;
+  int cnt=0; //counter variable to count the time
  800015e:	2300      	movs	r3, #0
  8000160:	607b      	str	r3, [r7, #4]
-    int led1=1;
+    int led1=1; //led1=1 => RED on YELLOW off    ;    led1=0 => YELLOW on RED off
  8000162:	2301      	movs	r3, #1
  8000164:	603b      	str	r3, [r7, #0]
     while (1)
@@ -125,60 +125,60 @@ int main(void)
  8000166:	683b      	ldr	r3, [r7, #0]
  8000168:	2b01      	cmp	r3, #1
  800016a:	d114      	bne.n	8000196 <main+0x4a>
-  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
+  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET); //Turn on RED LED
  800016c:	2200      	movs	r2, #0
  800016e:	2120      	movs	r1, #32
  8000170:	4815      	ldr	r0, [pc, #84]	; (80001c8 <main+0x7c>)
  8000172:	f000 fc09 	bl	8000988 <HAL_GPIO_WritePin>
-  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET); //Turn off YELLOW RED
  8000176:	2201      	movs	r2, #1
  8000178:	2140      	movs	r1, #64	; 0x40
  800017a:	4813      	ldr	r0, [pc, #76]	; (80001c8 <main+0x7c>)
  800017c:	f000 fc04 	bl	8000988 <HAL_GPIO_WritePin>
-  		  cnt+=1;
+  		  cnt+=1;	//increase counter
  8000180:	687b      	ldr	r3, [r7, #4]
  8000182:	3301      	adds	r3, #1
  8000184:	607b      	str	r3, [r7, #4]
-  		  if(cnt==2){
+  		  if(cnt==2){	//if counter reaches 2 sec => change led1 to 0 to change the LED
  8000186:	687b      	ldr	r3, [r7, #4]
  8000188:	2b02      	cmp	r3, #2
  800018a:	d118      	bne.n	80001be <main+0x72>
-  			  cnt=0;
+  			  cnt=0;	//reassign value for counter
  800018c:	2300      	movs	r3, #0
  800018e:	607b      	str	r3, [r7, #4]
-  			  led1=0;
+  			  led1=0;	//change led1 to 0
  8000190:	2300      	movs	r3, #0
  8000192:	603b      	str	r3, [r7, #0]
  8000194:	e013      	b.n	80001be <main+0x72>
   		  }
   	  } else {
-  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET); //Turn off RED LED
  8000196:	2201      	movs	r2, #1
  8000198:	2120      	movs	r1, #32
  800019a:	480b      	ldr	r0, [pc, #44]	; (80001c8 <main+0x7c>)
  800019c:	f000 fbf4 	bl	8000988 <HAL_GPIO_WritePin>
-  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET); //Turn on YELLOW RED
  80001a0:	2200      	movs	r2, #0
  80001a2:	2140      	movs	r1, #64	; 0x40
  80001a4:	4808      	ldr	r0, [pc, #32]	; (80001c8 <main+0x7c>)
  80001a6:	f000 fbef 	bl	8000988 <HAL_GPIO_WritePin>
-  		  cnt+=1;
+  		  cnt+=1; //increase counter
  80001aa:	687b      	ldr	r3, [r7, #4]
  80001ac:	3301      	adds	r3, #1
  80001ae:	607b      	str	r3, [r7, #4]
-  		  if(cnt==2){
+  		  if(cnt==2){	//if counter reaches 2 sec => change led1 to 1 to change the LED
  80001b0:	687b      	ldr	r3, [r7, #4]
  80001b2:	2b02      	cmp	r3, #2
  80001b4:	d103      	bne.n	80001be <main+0x72>
-  			  cnt=0;
+  			  cnt=0;	//reassign value for counter
  80001b6:	2300      	movs	r3, #0
  80001b8:	607b      	str	r3, [r7, #4]
-  			  led1=1;
+  			  led1=1;	//change led1 to 1
  80001ba:	2301      	movs	r3, #1
  80001bc:	603b      	str	r3, [r7, #0]
   		  }
   	  }
-  	  HAL_Delay(1000);
+  	  HAL_Delay(1000);	//Delay 1 sec
  80001be:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80001c2:	f000 f95f 	bl	8000484 <HAL_Delay>
   	  if(led1==1){
